@@ -1,14 +1,4 @@
-/**
- * Definition for singly-linked list.
- */
-class ListNode {
-  constructor (val, next) {
-    this.val = val == null ? 0 : val
-    this.next = next == null ? null : next
-  }
-}
-
-exports.ListNode = ListNode
+const { ListNode } = require('../modules/singly-linked-list')
 
 /**
  * @param  {ListNode} l1
@@ -27,8 +17,8 @@ exports.addTwoNumbers = function addTwoNumbers (l1, l2) {
   while (l1 || l2 || carry) {
     // Need to keep running values of l1 and l2.
     // Default running sums to 0.
-    const l1Value = l1 ? l1.val : 0
-    const l2Value = l2 ? l2.val : 0
+    const l1Value = l1 ? l1.value : 0
+    const l2Value = l2 ? l2.value : 0
 
     const sum = l1Value + l2Value + carry
 
