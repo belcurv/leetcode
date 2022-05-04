@@ -1,9 +1,4 @@
 /**
- *  const list = List.makeListFromArray([1, 2, 3, 4, 5])
- *  const expected = List.makeListFromArray([3, 4, 5])
- */
-
-/**
  * O(n + n) = O(n)
  * Count ListNodes, then .next through half of the nodes
  * @param  {ListNode} head
@@ -24,6 +19,7 @@ exports.middleNode = function middleNode (head) {
   // reset node back to head
   node = head
 
+  // decrement middle index while traversing the list. When index = 0, we're at the middle
   while (middleIndex > 0) {
     middleIndex--
     node = node.next
