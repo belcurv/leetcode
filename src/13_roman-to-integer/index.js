@@ -21,7 +21,7 @@ const dictionary = {
  * @param  {number}  depth
  * @return {number}
  */
-function romanToInt (str, sum = 0, depth = 15) {
+exports.romanToInt = function romanToInt (str, sum = 0, depth = 15) {
   if (str.length === 0 || depth < 0) return sum
 
   for (const numeral in dictionary) {
@@ -31,4 +31,19 @@ function romanToInt (str, sum = 0, depth = 15) {
   }
 }
 
-exports.romanToInt = romanToInt
+exports.romanToIntEleanor = function romanToIntEleanor (str) {
+  let out = 0
+  let cursor = 0
+
+  while (cursor < str.length) {
+    if (dictionary[str[cursor]] < dictionary[str[cursor + 1]]) {
+      out += dictionary[str[cursor + 1]] - dictionary[str[cursor]]
+      cursor += 2
+    } else {
+      out += dictionary[str[cursor]]
+      cursor += 1
+    }
+  }
+
+  return out
+}
