@@ -16,19 +16,22 @@ exports.removeDuplicates = function removeDuplicates (nums) {
 
   while (j < nums.length) {
     if (nums[j] === nums[i]) {
-      // when same, set nums[j] to 'removed'; do not move i pointer
+      // when same, set nums[j] to 'removed'; move j, do not move i pointer
       nums[j] = REMOVED
+      j++
     } else {
-      // when different, and when j-1 was removed ...
-      if (nums[j - 1] === REMOVED) {
-        // "swap" nums[j] and nums[i+1]
+      // else they're different.
+      // if i+1 was removed ...
+      if (nums[i + 1] === REMOVED) {
+        // "swap" nums[j] and nums[i+1] (aka REMOVED)
         nums[i + 1] = nums[j]
         nums[j] = REMOVED
       }
+      // move both pointers and increment counter
       i++
+      j++
       count++
     }
-    j++
   }
 
   return count + 1
