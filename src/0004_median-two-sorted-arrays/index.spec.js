@@ -1,70 +1,22 @@
 
-const { twoSum, twoSumMap } = require('./index')
+const { naiveFindMedianSortedArrays } = require('./index')
 
-describe('twoSum', () => {
-  it('should return array of correct indicies', () => {
-    const nums = [3, 2, 3]
-    const target = 6
-    const expected = [0, 2]
-    const actual = twoSum(nums, target)
-    expect(actual).toEqual(expected)
+describe('naiveFindMedianSortedArrays', () => {
+  // Explanation: merged array = [1,2,3] and median is 2.
+  it('should return 2', () => {
+    const nums1 = [1, 3]
+    const nums2 = [2]
+    const expected = 2
+    const actual = naiveFindMedianSortedArrays(nums1, nums2)
+    expect(actual).toBe(expected)
   })
 
-  it('should return array of correct indicies', () => {
-    const nums = [2, 7, 11, 15]
-    const target = 9
-    const expected = [0, 1]
-    const actual = twoSum(nums, target)
-    expect(actual).toEqual(expected)
-  })
-
-  it('should return array of correct indicies', () => {
-    const nums = [3, 2, 4]
-    const target = 6
-    const expected = [1, 2]
-    const actual = twoSum(nums, target)
-    expect(actual).toEqual(expected)
-  })
-
-  it('should return array of correct indicies', () => {
-    const nums = [3, 3]
-    const target = 6
-    const expected = [0, 1]
-    const actual = twoSum(nums, target)
-    expect(actual).toEqual(expected)
-  })
-})
-
-describe('twoSumMap', () => {
-  it('should return array of correct indicies', () => {
-    const nums = [3, 2, 3]
-    const target = 6
-    const expected = [0, 2]
-    const actual = twoSumMap(nums, target)
-    expect(actual).toEqual(expected)
-  })
-
-  it('should return array of correct indicies', () => {
-    const nums = [2, 7, 11, 15]
-    const target = 9
-    const expected = [0, 1]
-    const actual = twoSumMap(nums, target)
-    expect(actual).toEqual(expected)
-  })
-
-  it('should return array of correct indicies', () => {
-    const nums = [3, 2, 4]
-    const target = 6
-    const expected = [1, 2]
-    const actual = twoSumMap(nums, target)
-    expect(actual).toEqual(expected)
-  })
-
-  it('should return array of correct indicies', () => {
-    const nums = [3, 3]
-    const target = 6
-    const expected = [0, 1]
-    const actual = twoSumMap(nums, target)
-    expect(actual).toEqual(expected)
+  // Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
+  it('should return 2.5', () => {
+    const nums1 = [1, 2]
+    const nums2 = [3, 4]
+    const expected = 2.5
+    const actual = naiveFindMedianSortedArrays(nums1, nums2)
+    expect(actual).toBe(expected)
   })
 })
