@@ -41,5 +41,8 @@ exports.naiveFindMedianSortedArrays = function naiveFindMedianSortedArrays (nums
  * @return {number}
  */
 exports.findMedianSortedArrays = function findMedianSortedArrays (nums1, nums2) {
-  // TODO - https://www.youtube.com/watch?v=LPFhl65R7ww
+  // need to ensure nums1 is the shorter array. If it's longer, re-call with argument order swapped
+  if (nums1.length > nums2.length) return findMedianSortedArrays(nums2, nums1)
+
+  // todo
 }
