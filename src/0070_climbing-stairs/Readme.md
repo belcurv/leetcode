@@ -1,11 +1,13 @@
 
 # Explanation
 
-It took writing down multiple iterations before the pattern emerged: fibonacci!
+It took writing down multiple iterations before the pattern emerged:
 
 For any given `n`, the number of ways to reach steps `s` is equal to the sum of the previous two `n`'s steps
 
 <span><pre>s<sub>n</sub> = s<sub>n-2</sub> + s<sub>n-1</sub></pre><span>
+
+The first `n`'s are easily brute forced:
 
 ---
 
@@ -27,6 +29,8 @@ step     permutation
 1        1, 1
 2        2
 ```
+
+Every future `n` is based on the previous two `n`'s results:
 
 ---
 
